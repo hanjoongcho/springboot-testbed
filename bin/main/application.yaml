@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: local
+    
+---
+spring:
+  profiles: local
+server:
+  port: 18080  
+
+---
+spring:
+  profiles: dev
+server:
+  port: 18081
+
+
