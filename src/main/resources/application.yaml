@@ -5,6 +5,14 @@ spring:
     basename: i18n/messages
     encoding: UTF-8
     fallback-to-system-locale: true
+  devtools:
+    livereload:
+      enabled: true
+
+ckeditor:
+  storage:
+    image-path: C:/temp/image
+    service-url: http://localhost:18080/image
     
 ---
 spring:
