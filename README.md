@@ -1,11 +1,13 @@
 # springboot-testbed
 
 ## Spring Boot Profile
-### 참고링크
+### Reference Link
 
 ## Gradle Profile
-### 참고링크
+### Reference Link
 
 ## Thymeleaf
-### 참고링크
+### Reference Link
 [spring boot - Thymeleaf 화면 구성(Layout)](https://eblo.tistory.com/57)
+### Reference Code
+https://github.com/kkaok/examples/tree/master/thymeleafExample
