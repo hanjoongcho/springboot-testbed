@@ -1,6 +1,10 @@
 spring:
   profiles:
     active: local
+  messages: 
+    basename: i18n/messages
+    encoding: UTF-8
+    fallback-to-system-locale: true
     
 ---
 spring:
