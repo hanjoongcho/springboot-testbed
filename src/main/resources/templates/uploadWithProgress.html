@@ -1,0 +1,54 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var sendFile = function() {
+            // Get form
+            var form = $('#fileUploadForm')[0];
+            var data = new FormData(form);
+            data.append("CustomField", "This is some extra data, testing");
+            $("#btnSubmit").prop("disabled", true);
+            $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: "/upload/image",
+                data: data,
+                //http://api.jquery.com/jQuery.ajax/
+                //https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects
+                processData: false, //prevent jQuery from automatically transforming the data into a query string
+                contentType: false,
+                cache: false,
+                timeout: 600000,
+                xhr: function() {
+                    var xhr = $.ajaxSettings.xhr();
+                    xhr.upload.onprogress = function(e) { 
+	                    var percent = e.loaded * 100 / e.total;
+	                    console.log(percent);
+                    };
+                    return xhr;
+                },
+                success: function (data) {
+                    $("#result").text(data);
+                    console.log("SUCCESS : ", data);
+                    $("#btnSubmit").prop("disabled", false);
+                },
+                error: function (e) {
+                    $("#result").text(e.responseText);
+                    console.log("ERROR : ", e);
+                    $("#btnSubmit").prop("disabled", false);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form id="fileUploadForm">
+            <table>
+                <tr><td>File to upload:</td><td><input type="file" name="upload" id="upload"/></td></tr>
+                <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
