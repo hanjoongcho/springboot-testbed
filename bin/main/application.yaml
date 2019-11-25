@@ -8,6 +8,8 @@ spring:
   devtools:
     livereload:
       enabled: true
+  thymeleaf:
+    cache: false  
 
 ckeditor:
   storage:
