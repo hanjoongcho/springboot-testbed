@@ -43,4 +43,10 @@ public class UserTestController {
         model.addAttribute("user", user);
         return "test";
     }
+    
+    @GetMapping("/index")
+    public String index(Model model) {
+        model.addAttribute("message", "Hello, World!!!");
+        return "webpack";
+    }
 }

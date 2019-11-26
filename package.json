@@ -1,0 +1,34 @@
+{
+  "name": "springboot-testbed",
+  "version": "1.0.0",
+  "description": "[spring boot - Thymeleaf 화면 구성(Layout)](https://eblo.tistory.com/57)\r ### Reference Code\r https://github.com/kkaok/examples/tree/master/thymeleafExample",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "webpack --env=production",
+    "dev": "webpack-dev-server --env=development",
+    "start": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanjoongcho/springboot-testbed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanjoongcho/springboot-testbed/issues"
+  },
+  "homepage": "https://github.com/hanjoongcho/springboot-testbed#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.2.0",
+    "file-loader": "^5.0.2",
+    "style-loader": "^1.0.0",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}
