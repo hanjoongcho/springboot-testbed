@@ -9,6 +9,7 @@ module.exports = (env) => {
 
     return {
         mode: !env ? 'development' : env,
+        devtool: 'inline-source-map',
         entry: {
             vendors: [ 'jquery', 'moment' ],
             index: clientPath + '/index.js'
@@ -17,7 +18,7 @@ module.exports = (env) => {
             path: outputPath,
             filename: '[name].js'
         },
-        optimization: {
+        /*optimization: {
             splitChunks: {
                 chunks: 'all',
                 cacheGroups: {
@@ -31,10 +32,10 @@ module.exports = (env) => {
                 new UglifyJsPlugin(),
                 new OptimizeCssAssetsPlugin()
             ] : []
-        },
+        },*/
         devServer: {
             contentBase: outputPath,
-            publicPath: '/',
+            publicPath: '/js',
             host: '0.0.0.0',
             port: 18081,
             proxy: {
