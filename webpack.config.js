@@ -18,7 +18,7 @@ module.exports = (env) => {
             path: outputPath,
             filename: '[name].js'
         },
-        optimization: {
+       /* optimization: {
             splitChunks: {
                 chunks: 'all',
                 cacheGroups: {
@@ -32,7 +32,7 @@ module.exports = (env) => {
                 new UglifyJsPlugin(),
                 new OptimizeCssAssetsPlugin()
             ] : []
-        },
+        },*/
         devServer: {
             contentBase: outputPath,
             publicPath: '/',
