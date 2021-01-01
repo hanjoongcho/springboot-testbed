@@ -1,3 +1,9 @@
-window.onload = function() {
-    console.log('proxy onload')
-}
+import Styles from './index.css'
+import $ from 'jquery'
+import moment from 'moment'
+
+$(function() {
+    $("strong > div").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    
+    console.log('AAFactory', 1111111111111)
+});

@@ -6,7 +6,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 module.exports = (env) => {
     let clientPath = path.resolve(__dirname, 'src/main/client');
     let outputPath = path.resolve(__dirname, (env == 'production') ? 'src/main/resources/static' : 'out')
-
+    
     return {
         mode: !env ? 'development' : env,
         devtool: 'inline-source-map',
@@ -18,7 +18,7 @@ module.exports = (env) => {
             path: outputPath,
             filename: '[name].js'
         },
-        /*optimization: {
+        optimization: {
             splitChunks: {
                 chunks: 'all',
                 cacheGroups: {
@@ -32,10 +32,10 @@ module.exports = (env) => {
                 new UglifyJsPlugin(),
                 new OptimizeCssAssetsPlugin()
             ] : []
-        },*/
+        },
         devServer: {
             contentBase: outputPath,
-            publicPath: '/js',
+            publicPath: '/',
             host: '0.0.0.0',
             port: 18081,
             proxy: {
