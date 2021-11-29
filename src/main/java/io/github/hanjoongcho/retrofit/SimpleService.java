@@ -10,7 +10,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public class SimpleService {
-    public static final String REPOSITORY_CONTRIBUTORS = "https://raw.githubusercontent.com/hanjoongcho/aaf-easydiary/master/data/contributors.json"; 
     public static final String API_URL = "https://api.github.com";
     
     public static class Contributor {
